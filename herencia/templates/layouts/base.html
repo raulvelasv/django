@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%static 'style.css' %}">
-    {% block styles %}{% endblock  %}
-    <title> {% block title %}{% endblock  %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    {% block styles %}
+    {% endblock %}
+    <title>
+      {% block title %}
+      {% endblock %}
     </title>
-</head>
-<body>
-<nav>
-    <ul>
-        <li><a href="../herencia" >Herencia</a></li>
-        <li><a href="../otra">Otra</a></li>
-        <li><a href="../ejemplo">Ejemplos</a></li>
-    </ul>
-</nav>
+  </head>
+  <body>
+    {% include 'layouts/partials/menu.html' %}
     <main>
-        {% block content %}{% endblock %}
+      {% block content %}
+      {% endblock %}
     </main>
-    <footer>    
-        <p>Todos los derechos reservados</p>
-    </footer>
-</body>
+    {% include 'layouts/partials/footer.html' %}
+  </body>
 </html>
